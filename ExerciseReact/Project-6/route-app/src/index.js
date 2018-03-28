@@ -7,6 +7,7 @@ import One from './One';
 import Two from './Two';
 import Three from './Three';
 import Four from './Four';
+import FourPointOne from './FourPointOne';
 import NoMatch from './NoMatch';
 import { Router, Route, browserHistory } from 'react-router';
 
@@ -16,7 +17,9 @@ ReactDOM.render(
     <Route path="/One" component={One}></Route>
     <Route path="/Two" component={Two}></Route>
     <Route path="/Three" component={Three}></Route>
-    <Route path="/Four" component={Four}></Route>
+    <Route path="/Four" component={Four}>
+      <Route path="/Four/:id" component={FourPointOne} />
+    </Route>
     <Route path="*" component={NoMatch}></Route>
   </Router>
 
